@@ -12,7 +12,7 @@
 #include <sys/epoll.h>
 #include <sys/eventfd.h>
 #include "moodycamel/concurrentqueue.h"
-#include "common.h"
+#include "vela/common.h"
 
 namespace vela
 {
@@ -80,7 +80,6 @@ inline error_t Reactor::bind(fd_t fd, epoll_event_t epoll_events)
     event.data.fd   = fd;
     event.events    = epoll_events;
     return epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, fd, &event) < 0 ? ERR_EPOLL_CTL_ADD : ERR_OK;
-    
 }
 
 inline error_t Reactor::unbind(fd_t fd)

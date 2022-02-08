@@ -11,7 +11,7 @@ set(CMAKE_BUILD_TYPE DEBUG)
 set(PROJECT_SRC ${PROJECT_SOURCE_DIR})
 set(PROJECT_DEP ${PROJECT_SOURCE_DIR}/../dep)
 
-include_directories(${PROJECT_SRC}/.. ${PROJECT_DEP})
+include_directories(${PROJECT_SRC}/../.. ${PROJECT_DEP})
 link_directories(${PROJECT_DEP}/lib)
 
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,-rpath=./lib")
